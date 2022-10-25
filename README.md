@@ -14,7 +14,7 @@ bannerBrand:
     display: block
     margin: '100px auto 10rem'
     borderRadius: '1rem'
-  bgImage: https://wx3.sinaimg.cn/large/007iUkKrgy1h7hg6fpen4g319c0pie8t.gif
+  bgImage: https://img-blog.csdnimg.cn/img_convert/9d909f0067669896d79becba929da159.gif
   heroText: Xiaoxiao〰blog
   # tagline: 心若有所向往 何惧道阻且长
   # buttons:
