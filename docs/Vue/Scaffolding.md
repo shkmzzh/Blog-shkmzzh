@@ -1,5 +1,5 @@
 ---
-title: vue-cli配置
+title: vue-cli配置&生命周期
 date: 
 tags:
 - Vue
@@ -115,7 +115,8 @@ Vue CLI v5.0.4
 
 <img src=""/>
 
-## 使用图形化界面[#](https://cli.vuejs.org/zh/guide/creating-a-project.html#使用图形化界面)
+## 使用图形化界面
+[官网地址](https://cli.vuejs.org/zh/guide/creating-a-project.html#使用图形化界面)
 
 你也可以通过 `vue ui` 命令以图形化界面创建和管理项目：
 
@@ -123,3 +124,45 @@ Vue CLI v5.0.4
 vue ui
 ```
 <img src="https://img-blog.csdnimg.cn/beab9f30eb874938862da3889615ee18.png"/>
+
+
+## vue生命周期
+
+[官网地址](https://v2.cn.vuejs.org/v2/guide/instance.html#)生命周期图示
+
+> **生命周期**:是指vue实例从创建到销毁的过程，这个过程中是分成很多个阶段的 所有的生命周期都是一个函数，它是自动会触发，不需要去调用（不能调用），到了相应时间点，它就会自行执行
+
+
+
+### 创建期
+
+- **beforeCreate**: 创建前，实例化还没有完成，还不能访问data与methods
+
+- **created**: 创建后，实例化已完成，可以访问data与methods,  vue内部的dom还没有渲染，常用于进入页面接口请求
+
+### 渲染期 
+
+- **beforeMount**: 渲染前，读取了template需要渲染的部分，但是还没有完成渲染，还是不能访问vue渲染后的dom
+- **mounted**: 渲染后，vue内的dom已渲染完成，可以访问vue渲染后的dom,进入页面需要有dom操作就在这里进行
+  -   *上面的四个生命周期都只会执行一次*
+
+### 更新期(几乎不用)
+
+- 有条件的：vue内部使用(html)的相关数据已修改，它才会执行该时期
+- **beforeUpdate**: 更新前，vue内部使用的相关数据已修改，但还没有完成相应数据的渲染
+- **updated**: 更新后，vue内部使用的相关数据已修改,且完成相应数据的渲染
+  - *上面二个生命周期可以执行多次，但是有条件*
+
+### 销毁期
+
+-  **beforeDestroy**: 销毁前，还没有销毁，所以什么都可以访问，常用于做一些善后工作
+-  **destroyed**: 销毁后，销毁实际就是中断渲染，这时候还是可以访问data与methods,只是不能访问vue渲染后的dom,它也可以做一些善后工作
+
+
+
+<img src="https://img-blog.csdnimg.cn/e64b351c90304045a8d5ac7e6fd98492.png"/>
+
+
+
+<img src="https://img-blog.csdnimg.cn/41930805e1d340fa855decfeafaeaceb.png"/>
+

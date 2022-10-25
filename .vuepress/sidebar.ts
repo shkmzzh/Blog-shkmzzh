@@ -50,7 +50,7 @@ export default {
     },
     {
       text: 'Vue组件化编程',
-      children: ['Scaffolding']
+      children: ['Scaffolding','component']
     }
   ]
 }
