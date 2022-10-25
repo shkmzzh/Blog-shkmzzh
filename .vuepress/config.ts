@@ -1,9 +1,12 @@
 import { defineUserConfig } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
 import recoTheme from 'vuepress-theme-reco'
-import sidebar from './sidebar'
-import nav from './navbar'
-import { plugins } from './plugins'
+import sidebar from './config/sidebar'
+import nav from './config/navbar'
+import { plugins } from './config/plugins'
+import { randomAvater } from './config/randomAvatar'
+console.log(randomAvater)
+
 
 export default defineUserConfig({
   title: 'Xiao〰xiao ? !',
@@ -12,13 +15,13 @@ export default defineUserConfig({
   dest: '../shkmzzh/dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
   theme: recoTheme({
     style: '@vuepress-reco/style-default',
     logo: '/logo.png',
     author: 'Xiao〰xiao ? !',
-    authorAvatar: 'https://img-blog.csdnimg.cn/1ed44a39940b4b25b3ee2ce382a36c5d.png',
+    authorAvatar: randomAvater,
     docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco-next',
     docsBranch: 'main',
     docsDir: 'example',
@@ -88,10 +91,10 @@ export default defineUserConfig({
       options: {
         appId: '9tl3j59Ega3LWOlRIJdFGmSD-gzGzoHsz', // your appId
         appKey: 'tf5LIgpfywfJ8relOu7eiCdy', // your appKey
-        hideComments: true, // 全局隐藏评论，默认 false
-      },
-    },
+        hideComments: true // 全局隐藏评论，默认 false
+      }
+    }
   }),
   // debug: true,
-  plugins: plugins,
+  plugins: plugins
 })
