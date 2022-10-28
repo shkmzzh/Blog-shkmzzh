@@ -1,13 +1,15 @@
 let avatar = [
-  'https://img-blog.csdnimg.cn/35f28bba1e34402987893f9adb7f28e5.jpeg',
-  'https://img-blog.csdnimg.cn/3c97c4782556415880a05f41acbc6484.jpeg',
-  'https://img-blog.csdnimg.cn/c41e22937b234fd89caa38df3e09e0c9.jpeg',
-  'https://img-blog.csdnimg.cn/5bd9106af0864891a8167155148fe116.jpeg',
-  'https://img-blog.csdnimg.cn/c9d624de84244eada62a03c2f0726e2d.jpeg',
-  'https://img-blog.csdnimg.cn/c4f1c68584d74993870b92afc54edeb8.jpeg',
-  'https://img-blog.csdnimg.cn/d6bf1b3040174bb19134fd9d8a21c9d7.jpeg',
-  'https://img-blog.csdnimg.cn/49afe0c4dd07434da5293e7d57672fc8.jpeg',
+  'https://pic1.zhimg.com/80/v2-286c9c01b8e1e9e9197cf2ef38a268a4_r.jpg',
+  'https://pica.zhimg.com/80/v2-97f6e96d931e91538f7c7b6527b75737_r.jpg',
+  'https://pic4.zhimg.com/80/v2-8a02a6bb98c190e437c7c17a19fd7378_r.jpg',
+  'https://pic1.zhimg.com/80/v2-0fe3f069bff4ae9780c926bc165ba1c6_r.jpg',
+  'https://pic3.zhimg.com/80/v2-f35718331b7c698af7bf42689a889bea_r.jpg',
+  'https://pic2.zhimg.com/80/v2-1c3a420d384c30deb27de1dff9d91b78_r.jpg',
+  'https://pica.zhimg.com/80/v2-dc61097a34c547a75a9ebca5757419dc_r.jpg',
+  'https://pic4.zhimg.com/80/v2-61ff848a04b57798d8c0f40f14054a4a_r.jpg',
+  'https://pic3.zhimg.com/80/v2-738a80bf6bfd7adc2a30afc1b3937f34_r.jpg',
+  'https://pic3.zhimg.com/80/v2-14b1d695debeb668082bfe7f18a06d8f_r.jpg'
 ]
-let random = Math.floor(Math.random() * 8)
-
-export let randomAvater =avatar[random]
+const random = Date.now()
+const res = String(random).charAt(12)
+export const randomAvater = avatar[res]

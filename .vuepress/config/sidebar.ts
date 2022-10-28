@@ -34,7 +34,7 @@ export default {
     },
     {
       text: 'Git宝典',
-      children: ['git']
+      children: ['git','gitcy']
     }
   ],
   '/docs/Node/': [

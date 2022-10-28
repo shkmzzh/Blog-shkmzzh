@@ -23,8 +23,8 @@ export const plugins = [
       {
         name: 'Running up',
         artist: 'xiao',
-        url: 'https://ws.stream.qqmusic.qq.com/C400004ewwlC2ertsX.m4a?guid=640719&vkey=2C1C27EBB9E68C921ADED0218B19DD7844E11C4AF301B4E30CA9761D2AAF6828F670D1EF368B2526DCDD4B0DCC48D3F4A03687628F2CF9DE&uin=626567678&fromtag=103032',
-        cover: 'https://img-blog.csdnimg.cn/35f28bba1e34402987893f9adb7f28e5.jpeg'
+        url: 'https://ws.stream.qqmusic.qq.com/C400004ewwlC2ertsX.m4a?guid=5456640&vkey=4270F2E4C92852BF81247181D4C0EFD4CD4A9E9FBD8D944894EE3F3EB3BA84F1731B326AC82A698AF80DD8628B33A3E006A74E95CE9CA3AD&uin=626567678&fromtag=103032',
+        cover: 'https://pic3.zhimg.com/80/v2-14b1d695debeb668082bfe7f18a06d8f_r.jpg'
       }
     ],
     autoShrink: true,

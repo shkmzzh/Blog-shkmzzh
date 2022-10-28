@@ -13,6 +13,7 @@ tags:
 1. 计算属性必须定义在 computed 节点中
 2. 计算属性必须是一个 function,计算属性必须有返回值
 3. 计算属性不能被当作方法调用,当成属性来用
+4. 只能用在插值表达式和 `v-bind` 属性绑定
 
 定义计算属性
 
@@ -88,12 +89,20 @@ computed: {
 
     }
   }
+  当需要监听的值是一个对象里的值时
+  obj：{
+    num:5
+  }
 */
 watch: {
   // 参数1： newval    变化后的值
   // 参数2： oldValue  变化前的值  
   msg (newval, oldVal) {
     console.log('你变了', newval, oldVal)
+  }
+  // 监听对象中的值写法
+  "obj.num"(newval,oldval){
+    console.log(newval,oldval)
   }
 }
 ```
