@@ -1,28 +1,28 @@
 .hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-div[class*="language-"]::after {
-    background: #f9413a;
-    box-shadow: 22px 0 0 0 #ffa700, 44px 0 0 0 #29e946;
+div[class*='language-']::after {
+  background: #f9413a;
+  box-shadow: 22px 0 0 0 #ffa700, 44px 0 0 0 #29e946;
 }
 
 blockquote {
-    border-color: rgb(73, 84, 230);
-    background-color: rgb(73, 84, 230, .2);
+  border-color: rgb(73, 84, 230);
+  background-color: rgb(73, 84, 230, 0.2);
 }
 
 strong {
-    color: deepskyblue;
+  color: deepskyblue;
 }
 
 em {
-    color: #29e946;
-    font-weight: 600;
+  color: #29e946;
+  font-weight: 600;
 }

@@ -24,7 +24,7 @@ tags:
 
 ### push()
 
-`push()`方法接收任意数量的参数，并将它们添加到数组末尾，返回数组的最新长度
+**`push()`** 方法将一个或多个元素添加到数组的**末尾**，并返回该数组的**新长度**。(影响原数组)
 
 ```js
 let colors = []; // 创建一个数组
@@ -34,7 +34,7 @@ console.log(count) // 2
 
 ### unshift()
 
-unshift()在数组开头添加任意多个值，然后返回新的数组长度
+**`unshift()`** 方法将一个或多个元素添加到数组的**开头**，并返回该数组的**新长度**。(影响原数组)
 
 ```js
 let colors = new Array(); // 创建一个数组
@@ -58,10 +58,12 @@ console.log(removed) // []
 首先会创建一个当前数组的副本，然后再把它的参数添加到副本末尾，最后返回这个新构建的数组，不会影响原始数组
 
 ```js
-let colors = ["red", "green", "blue"];
-let colors2 = colors.concat("yellow", ["black", "brown"]);
-console.log(colors); // ["red", "green","blue"]
-console.log(colors2); // ["red", "green", "blue", "yellow", "black", "brown"]
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// expected output: Array ["a", "b", "c", "d", "e", "f"]
 ```
 
 ## 删
@@ -108,7 +110,7 @@ console.log(removed); // red，只有一个元素的数组
 
 ### slice()
 
-slice() 用于创建一个包含原有数组中一个或多个元素的新数组，不会影响原始数组
+`slice() `用于创建一个包含原有数组中一个或多个元素的新数组，(不会影响原始数组)
 
 ```js
 let colors = ["red", "green", "blue", "yellow", "purple"];
@@ -125,7 +127,7 @@ concole.log(colors3); // green,blue,yellow
 
 ### splice()
 
-传入三个参数，分别是开始位置，要删除元素的数量，要插入的任意多个元素，返回删除元素的数组，对原数组产生影响
+传入三个参数，分别是开始位置，要删除元素的数量，要插入的任意多个元素，返回删除元素的数组，对原数组产生影响 (改变原数组)
 
 ```js
 let colors = ["red", "green", "blue"];
@@ -144,7 +146,7 @@ console.log(removed); // green，只有一个元素的数组
 
 #### indexOf()
 
-返回要查找的元素在数组中的位置，如果没找到则返回 -1
+**`indexOf()`** 方法返回在数组中可以找到给定元素的第一个索引，如果不存在，则返回 -1。
 
 ```js
 let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
@@ -153,16 +155,18 @@ numbers.indexOf(4) // 3
 
 ### includes()
 
-返回要查找的元素在数组中的位置，找到返回`true`，否则`false`
+**`includes()`** 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 `true`，否则返回 `false`。
 
 ```js
 let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
 numbers.includes(4) // true
+const pets = ['cat', 'dog', 'bat'];
+console.log(pets.includes('cat')); //true
 ```
 
 ### find()
 
-返回第一个匹配的元素
+**`find()`** 方法返回数组中满足提供的测试函数的**第一个匹配**元素的值。否则返回 [`undefined`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined)。
 
 ```js
 const people = [
@@ -175,7 +179,9 @@ const people = [
         age: 29
     }
 ];
-people.find((element, index, array) => element.age < 28) // // {name: "Matt", age: 27}
+ const a =people.find((element, index, array) => element.age < 28)  // {name: "Matt", age: 27}
+ 如果对a的值进行修改会影响到原数组，比如 a.name='zs' 
+ console.log(peopel) // Array [Object { name: "zs", age: 27 }, Object { name: "Nicholas", age: 29 }]
 ```
 
 ## 排序方法
@@ -187,25 +193,30 @@ people.find((element, index, array) => element.age < 28) // // {name: "Matt", ag
 
 ### reverse()
 
-顾名思义，将数组元素方向反转
+**`reverse()`** 方法将数组中元素的位置颠倒，并返回该数组，该方法会改变原数组
 
 ```js
 let values = [1, 2, 3, 4, 5];
 values.reverse();
 alert(values); // 5,4,3,2,1
+------------------------------------------------
+const array1 = ['one', 'two', 'three'];
+const reversed = array1.reverse();
+Array ["three", "two", "one"]
 ```
 
 ### sort()
 
-sort()方法接受一个比较函数，用于判断哪个值应该排在前面
+`sort()`方法接受一个比较函数，用于判断哪个值应该排在前面
 
 ```js
-function compare(value1, value2) {
-    if (value1 < value2) {
+function compare(a,b) {
+    if (a < b)  (在某些排序规则中，a 小于 b){
         return -1;
-    } else if (value1 > value2) {
+    } else if (a > b) (在这一排序规则下，a 大于 b){
         return 1;
     } else {
+         a 一定等于 b
         return 0;
     }
 }
@@ -220,7 +231,7 @@ alert(values); // 0,1,5,10,15
 
 ### join()
 
-join() 方法接收一个参数，即字符串分隔符，返回包含所有项的字符串
+**`join()`** 方法将一个数组（或一个[类数组对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#使用类数组对象_array-like_objects)）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。
 
 ```js
 let colors = ["red", "green", "blue"];
@@ -242,6 +253,8 @@ alert(colors.join("||")); // red||green||blue
 
 对数组每一项都运行传入的测试函数，如果至少有1个元素返回 true ，则这个方法返回 true
 
+**注**：如果用一个空数组进行测试，在任何情况下它返回的都是 false。
+
 ```js
 let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
 let someResult = numbers.some((item, index, array) => item > 2);
@@ -251,6 +264,8 @@ console.log(someResult) // true
 ### every()
 
 对数组每一项都运行传入的测试函数，如果所有元素都返回 true ，则这个方法返回 true
+
+**注**： 若收到一个空数组，此方法在任何情况下都会返回 `true`。
 
 ```js
 let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
@@ -290,3 +305,20 @@ let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
 let mapResult = numbers.map((item, index, array) => item * 2);
 console.log(mapResult) // 2,4,6,8,10,8,6,4,2
 ```
+
+## 静态数组方法
+
+### from()
+
+**`Array.from()`** 方法对一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
+
+**注**：常用于伪数组转换为真数组
+
+```js
+console.log(Array.from('foo'));
+// expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], x => x + x));
+// expected output: Array [2, 4, 6]
+```
+
