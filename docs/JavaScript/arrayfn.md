@@ -42,9 +42,9 @@ let count = colors.unshift("red", "green"); // 从数组开头推入两项
 alert(count); // 2
 ```
 
-### splice
+### splice()
 
-传入三个参数，分别是开始位置、0（要删除的元素数量）、插入的元素，返回空数组
+`splice()`方法传入三个参数，分别是开始位置、0（要删除的元素数量）、插入的元素，返回空数组
 
 ```js
 let colors = ["red", "green", "blue"];
@@ -136,6 +136,29 @@ console.log(colors); // red,red,purple,blue
 console.log(removed); // green，只有一个元素的数组
 ```
 
+### fill()
+
+**`fill()`** 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。
+
+**参数**  `value ` 用来填充数组元素的值, `start `(可选)起始索引，默认值为 0,`end`（可选）终止索引，默认值为 arr.length。
+
+```js
+const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+```
+
+
+
 ## 查
 
 即查找元素，返回元素坐标或者元素值
@@ -144,7 +167,7 @@ console.log(removed); // green，只有一个元素的数组
 > - includes()
 > - find()
 
-#### indexOf()
+### indexOf()
 
 **`indexOf()`** 方法返回在数组中可以找到给定元素的第一个索引，如果不存在，则返回 -1。
 
@@ -179,9 +202,24 @@ const people = [
         age: 29
     }
 ];
- const a =people.find((element, index, array) => element.age < 28)  // {name: "Matt", age: 27}
- 如果对a的值进行修改会影响到原数组，比如 a.name='zs' 
- console.log(peopel) // Array [Object { name: "zs", age: 27 }, Object { name: "Nicholas", age: 29 }]
+let a =people.find((element, index, array) => element.age < 28)  
+a // {name: "Matt", age: 27}
+如果改变 a 的值将会改变原数组的值 例：
+a.name='zs'
+console.log(people) //[{name: "zs", age: 27},{name: "Nicholas", age: 29}]
+```
+
+### findIndex()
+
+`findIndex()`方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回 -1。
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
 ```
 
 ## 排序方法
@@ -305,6 +343,37 @@ let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
 let mapResult = numbers.map((item, index, array) => item * 2);
 console.log(mapResult) // 2,4,6,8,10,8,6,4,2
 ```
+
+### reduce()
+
+`reducer` 方法逐个遍历数组元素，每一步都将当前元素的值与上一步的计算结果相加（上一步的计算结果是当前元素之前所有元素的总和）——直到没有更多的元素被相加。
+
+**参数**
+
+一个“reducer”函数，包含四个参数：
+
+- `previousValue`：上一次调用 `callbackFn` 时的返回值。在第一次调用时，若指定了初始值 `initialValue`，其值则为 `initialValue`，否则为数组索引为 0 的元素 `array[0]`。
+- `currentValue`：数组中正在处理的元素。在第一次调用时，若指定了初始值 `initialValue`，其值则为数组索引为 0 的元素 `array[0]`，否则为 `array[1]`。
+- `currentIndex`：数组中正在处理的元素的索引。若指定了初始值 `initialValue`，则起始索引号为 0，否则从索引 1 起始。
+- `array`：用于遍历的数组。
+
+**求和**
+
+```js
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// expected output: 10
+```
+
+
 
 ## 静态数组方法
 
