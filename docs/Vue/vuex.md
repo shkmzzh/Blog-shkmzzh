@@ -463,9 +463,9 @@ export default {
 - mapState
   - 导入  import {mapState} from 'vuex'
 
-```JavaScript
+```js
 computed:{
-   ...mapState(模块名,['属性名'])
+   ...mapState('模块名',['属性名'])
 }
 // 使用：  this.属性名
 ```
