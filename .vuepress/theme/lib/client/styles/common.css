@@ -1,0 +1,7 @@
+.common-wrapper {
+  .password-wrapper {
+    &.out {
+      @apply fixed z-50 w-screen h-screen;
+    }
+  }
+}

@@ -11,6 +11,7 @@ console.log(randomAvater)
 export default defineUserConfig({
   title: 'Xiao〰xiao ? !',
   description: 'Just playing around',
+  // base: './',
   // 打包文件夹名
   dest: '../shkmzzh/dist',
   head: [
@@ -22,6 +23,7 @@ export default defineUserConfig({
     logo: '/logo.png',
     author: 'Xiao〰xiao ? !',
     authorAvatar: randomAvater,
+    randomAvater,
     docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco-next',
     docsBranch: 'main',
     docsDir: 'example',
