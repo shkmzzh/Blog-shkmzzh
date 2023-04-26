@@ -1,5 +1,5 @@
 <template>
-  <video class="banner-brand-wrapper" src="https://zzh-1313186768.cos.ap-guangzhou.myqcloud.com/shkmzzh/Bleach%20-%20Hitsugaya%20Toshiro%20Cybust%20PC.mp4" autoplay="autoplay" muted="muted" loop="loop">
+  <video class="banner-brand-wrapper" src="http://abc-1305249343.cos.ap-chongqing.myqcloud.com/951655033923-1655033923-pc-desktop-makima-bang-chainsaw-man-1080p-live-wallpaper.mp4" autoplay="autoplay" muted="muted" loop="loop">
     <div class="hero-content">
       <img
         v-if="heroImage"
