@@ -1,5 +1,5 @@
 <template>
-  <video class="banner-brand-wrapper" src="http://abc-1305249343.cos.ap-chongqing.myqcloud.com/951655033923-1655033923-pc-desktop-makima-bang-chainsaw-man-1080p-live-wallpaper.mp4" autoplay="autoplay" muted="muted" loop="loop">
+  <video class="banner-brand-wrapper" src="http://chennuli-1314477434.cos.ap-nanjing.myqcloud.com/951655033923-1655033923-pc-desktop-makima-bang-chainsaw-man-1080p-live-wallpaper.mp4" autoplay="autoplay" muted="muted" loop="loop">
     <div class="hero-content">
       <img
         v-if="heroImage"
