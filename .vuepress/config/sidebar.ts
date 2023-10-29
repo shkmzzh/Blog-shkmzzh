@@ -52,5 +52,16 @@ export default {
       text: 'Vue组件化编程',
       children: ['Scaffolding','component','router','vuex']
     }
-  ]
+  ],
+  '/docs/React/': [
+    {
+      text: 'Vue核心基础',
+      children: ['directive', 'attribute']
+    },
+    {
+      text: 'Vue组件化编程',
+      children: ['Scaffolding','component','router','vuex']
+    }
+  ],
+  
 }
