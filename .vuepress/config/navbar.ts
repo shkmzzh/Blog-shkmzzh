@@ -10,7 +10,7 @@ export default [
       { text: 'Ajax&Git', link: '/docs/Ajax_Git/ajax' },
       { text: 'Node', link: '/docs/Node/nodeBase' },
       { text: 'Vue', link: '/docs/Vue/directive' },
-      { text: 'React', link: '/docs/React/' },
+      { text: 'React', link: '/docs/React/01-reactOverview' },
 
     ],
   },

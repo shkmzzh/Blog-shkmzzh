@@ -55,13 +55,9 @@ export default {
   ],
   '/docs/React/': [
     {
-      text: 'Vue核心基础',
-      children: ['directive', 'attribute']
+      text: 'React基础',
+      children: ['01-reactOverview', '02-JSX','03-ComponentBasics','04-ComponentCommunication','05-ComponentAdvancement','06-reacthooks1','07-react hooks2','08-redux1','09-redux2','10-reactrouter']
     },
-    {
-      text: 'Vue组件化编程',
-      children: ['Scaffolding','component','router','vuex']
-    }
   ],
   
 }
